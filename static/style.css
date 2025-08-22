@@ -1,3 +1,6 @@
+/* ------------------------------
+    基本設定
+------------------------------ */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -5,6 +8,9 @@ body {
     background-color: #f9f9f9;
 }
 
+/* ------------------------------
+    ヘッダー
+------------------------------ */
 header {
     display: flex;
     justify-content: space-between;
@@ -16,8 +22,9 @@ header {
 }
 
 header h1 {
-    font-size: 1.5rem; /* 小さめに調整 */
+    font-size: 1.5rem; /* サイト名 */
     margin: 0;
+    position: relative;
 }
 
 header h1 a {
@@ -25,13 +32,26 @@ header h1 a {
     color: #333;
 }
 
+/* サイト名クリックで出る四角いリンクボックス */
 .feature-links {
     display: none;
-    margin-top: 5px;
+    position: absolute;
+    top: 100%; /* サイト名の下 */
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 100;
+    min-width: 150px;
+    flex-direction: column;
 }
 
+/* 縦並びの文字型リンク */
 .feature-links a {
-    margin-left: 10px;
+    display: block;
+    font-size: 0.75rem; /* サイト名の半分 */
+    margin-bottom: 5px;
     text-decoration: none;
     color: #333;
 }
@@ -42,11 +62,17 @@ header h1 a {
     color: #333;
 }
 
+/* ------------------------------
+    メインコンテナ
+------------------------------ */
 .feed-container {
     min-height: calc(100vh - 120px); /* 上下ナビバーの高さを除いた空スペース */
     padding: 20px;
 }
 
+/* ------------------------------
+    フッター
+------------------------------ */
 footer {
     position: fixed;
     bottom: 0;
@@ -65,3 +91,21 @@ footer {
     text-decoration: none;
     color: #333;
 }
+
+/* ------------------------------
+    レスポンシブ調整
+------------------------------ */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .feature-links {
+        min-width: 120px;
+    }
+
+    .feature-links a {
+        font-size: 0.65rem;
+    }
+}
+
