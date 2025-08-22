@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>トップページ</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フィードページ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <header>
-    <h1>サイト名</h1> <!-- 後で決める -->
-    <nav>
-        <a href="#">AI診断</a>
-        <a href="#">複利時計</a>
-        <a href="#">本棚</a>
-        <a href="#">複利計算</a>
+    <h1>
+        <a href="#" id="site-name">サイト名</a>
+        <div id="feature-links" class="feature-links">
+            <a href="#">AI診断</a>
+            <a href="#">複利時計</a>
+            <a href="#">本棚</a>
+            <a href="#">複利計算</a>
+        </div>
+    </h1>
+    <nav class="top-nav">
+        <a href="#">通知</a>
+        <a href="#">DM</a>
     </nav>
 </header>
 
@@ -31,6 +37,14 @@
         <a href="#">プロフィール</a>
     </nav>
 </footer>
+
+<script>
+document.getElementById("site-name").onclick = function(e) {
+    e.preventDefault();
+    const links = document.getElementById("feature-links");
+    links.style.display = links.style.display === "none" ? "block" : "none";
+};
+</script>
 
 </body>
 </html>
