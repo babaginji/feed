@@ -1,4 +1,4 @@
-/* 全体のリセット */
+/* 全体 */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -18,56 +18,65 @@ header {
     z-index: 100;
 }
 
-header h1 {
+/* ─ サイト名（h1 or a のどちらでも紫/下線を無効化）─ */
+header h1#site-title,
+header a#site-title,
+header .site-title {
     font-size: 1.5rem;
     cursor: pointer;
     margin: 0;
-    color: #333;
-    text-decoration: none; /* 紫色やアンダーバーを防ぐ */
+    color: #222;
+    text-decoration: none;
+}
+header a#site-title:link,
+header a#site-title:visited,
+header a#site-title:hover,
+header a#site-title:active {
+    color: #222 !important;
+    text-decoration: none !important;
+}
+header h1#site-title:hover,
+header a#site-title:hover,
+header .site-title:hover {
+    color: #444;
 }
 
-header h1:hover {
-    color: #555; /* 触ったときに少し暗く */
-}
-
-/* サイト名を押したら出るボックス */
+/* サイト名を押したら出るボックス（少し小さめに） */
 .feature-links {
-    display: none; /* 初期状態は非表示 */
+    display: none; /* 初期は非表示 */
     position: absolute;
-    top: 60px; /* ヘッダー下に表示 */
+    top: 56px;         /* ヘッダーのすぐ下 */
     left: 20px;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;         /* 少し狭め */
     background: rgba(255, 255, 255, 0.95);
-    padding: 15px;
+    padding: 12px;     /* 小さめ */
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    min-width: 160px; /* 小さめ */
+    min-width: 140px;  /* 一回り小さく */
     align-items: center;
     animation: fadeIn 0.2s ease-in-out;
 }
-
 .feature-links a {
     text-decoration: none;
     color: #333;
-    font-size: 1rem; /* 小さめに */
+    font-size: 0.95rem; /* 少し小さめに */
     font-weight: 500;
 }
-
 .feature-links a:hover {
-    color: #0077cc; /* ホバー時に青系でアクセント */
+    color: #0077cc;
 }
 
-/* フェードインアニメーション */
+/* フェードイン */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-8px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* フィードのメインエリア */
+/* フィード領域 */
 .feed-container {
-    min-height: calc(100vh - 120px); /* 上下ナビバーを除いた高さ */
+    min-height: calc(100vh - 120px);
     padding: 20px;
 }
 
@@ -79,13 +88,11 @@ footer {
     background-color: #fff;
     border-top: 1px solid #ddd;
 }
-
 .bottom-nav {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
 }
-
 .bottom-nav a {
     text-decoration: none;
     color: #333;
