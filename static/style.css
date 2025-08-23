@@ -23,12 +23,11 @@ header h1 {
     cursor: pointer;
     margin: 0;
     color: #333;
+    text-decoration: none; /* 紫色やアンダーバーを防ぐ */
 }
 
-header nav a {
-    margin-left: 10px;
-    text-decoration: none;
-    color: #333;
+header h1:hover {
+    color: #555; /* 触ったときに少し暗く */
 }
 
 /* サイト名を押したら出るボックス */
@@ -38,13 +37,13 @@ header nav a {
     top: 60px; /* ヘッダー下に表示 */
     left: 20px;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     background: rgba(255, 255, 255, 0.95);
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    min-width: 200px;
+    min-width: 160px; /* 小さめ */
     align-items: center;
     animation: fadeIn 0.2s ease-in-out;
 }
@@ -52,13 +51,17 @@ header nav a {
 .feature-links a {
     text-decoration: none;
     color: #333;
-    font-size: 1.2rem;
+    font-size: 1rem; /* 小さめに */
     font-weight: 500;
+}
+
+.feature-links a:hover {
+    color: #0077cc; /* ホバー時に青系でアクセント */
 }
 
 /* フェードインアニメーション */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
+    from { opacity: 0; transform: translateY(-8px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
