@@ -1,4 +1,4 @@
-/* 全体 */
+/* 全体のリセット */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -18,65 +18,53 @@ header {
     z-index: 100;
 }
 
-/* ─ サイト名（h1 or a のどちらでも紫/下線を無効化）─ */
-header h1#site-title,
-header a#site-title,
-header .site-title {
+header h1 {
     font-size: 1.5rem;
     cursor: pointer;
     margin: 0;
-    color: #222;
-    text-decoration: none;
-}
-header a#site-title:link,
-header a#site-title:visited,
-header a#site-title:hover,
-header a#site-title:active {
-    color: #222 !important;
-    text-decoration: none !important;
-}
-header h1#site-title:hover,
-header a#site-title:hover,
-header .site-title:hover {
-    color: #444;
+    color: #333;
 }
 
-/* サイト名を押したら出るボックス（少し小さめに） */
+header nav a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* サイト名を押したら出るボックス */
 .feature-links {
-    display: none; /* 初期は非表示 */
+    display: none; /* 初期状態は非表示 */
     position: absolute;
-    top: 56px;         /* ヘッダーのすぐ下 */
+    top: 60px; /* ヘッダー下に表示 */
     left: 20px;
     flex-direction: column;
-    gap: 10px;         /* 少し狭め */
+    gap: 15px;
     background: rgba(255, 255, 255, 0.95);
-    padding: 12px;     /* 小さめ */
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    min-width: 140px;  /* 一回り小さく */
+    min-width: 200px;
     align-items: center;
     animation: fadeIn 0.2s ease-in-out;
 }
+
 .feature-links a {
     text-decoration: none;
     color: #333;
-    font-size: 0.95rem; /* 少し小さめに */
+    font-size: 1.2rem;
     font-weight: 500;
 }
-.feature-links a:hover {
-    color: #0077cc;
-}
 
-/* フェードイン */
+/* フェードインアニメーション */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-8px); }
+    from { opacity: 0; transform: translateY(-10px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* フィード領域 */
+/* フィードのメインエリア */
 .feed-container {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 120px); /* 上下ナビバーを除いた高さ */
     padding: 20px;
 }
 
@@ -88,11 +76,13 @@ footer {
     background-color: #fff;
     border-top: 1px solid #ddd;
 }
+
 .bottom-nav {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
 }
+
 .bottom-nav a {
     text-decoration: none;
     color: #333;
