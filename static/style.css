@@ -44,6 +44,12 @@ header h1 a {
     margin-left: auto;
     padding-right: 10px; /* 右端に余白を追加 */
 }
+/* 通知アイコン画像 */
+.notif-icon {
+    width: 24px; /* 元の文字リンクサイズに合わせる */
+    height: 24px; /* 必要に応じて調整 */
+    object-fit: contain;
+}
 
 
 /* サイト名クリックで出る四角いリンクボックス（スクロール追従） */
