@@ -3,48 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>フィードページ</title>
+    <title>トップページ</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<header>
-    <h1>
-        <a href="#" id="site-name">サイト名</a>
-        <div id="feature-links" class="feature-links">
+    <header>
+        <h1>
+            <a href="#" id="site-name">サイト名</a>
+        </h1>
+        <!-- 出てくるボックス -->
+        <div class="feature-links" id="feature-links">
             <a href="#">AI診断</a>
             <a href="#">複利時計</a>
             <a href="#">本棚</a>
             <a href="#">複利計算</a>
         </div>
-    </h1>
-    <nav class="top-nav">
-        <a href="#">通知</a>
-        <a href="#">DM</a>
-    </nav>
-</header>
+        <nav class="top-nav">
+            <a href="#">通知</a>
+            <a href="#">DM</a>
+        </nav>
+    </header>
 
-<main class="feed-container">
-    <!-- 投稿やニュースを置くスペース -->
-</main>
+    <main class="feed-container">
+        <!-- 投稿やニュースを置くスペース -->
+    </main>
 
-<footer>
-    <nav class="bottom-nav">
-        <a href="#">ホーム</a>
-        <a href="#">探す</a>
-        <a href="#">投稿</a>
-        <a href="#">ポートフォリオ</a>
-        <a href="#">プロフィール</a>
-    </nav>
-</footer>
+    <footer>
+        <nav class="bottom-nav">
+            <a href="#">ホーム</a>
+            <a href="#">探す</a>
+            <a href="#">投稿</a>
+            <a href="#">ポートフォリオ</a>
+            <a href="#">プロフィール</a>
+        </nav>
+    </footer>
 
-<script>
-document.getElementById("site-name").onclick = function(e) {
-    e.preventDefault();
-    const links = document.getElementById("feature-links");
-    links.style.display = links.style.display === "block" ? "none" : "block";
-};
-</script>
+    <!-- JavaScript制御 -->
+    <script>
+        const siteName = document.getElementById("site-name");
+        const featureLinks = document.getElementById("feature-links");
+
+        // サイト名をクリックでトグル
+        siteName.addEventListener("click", (event) => {
+            event.preventDefault();
+            featureLinks.style.display =
+                featureLinks.style.display === "flex" ? "none" : "flex";
+        });
+
+        // ボックス外をクリックしたら閉じる
+        document.addEventListener("click", (event) => {
+            if (
+                !siteName.contains(event.target) &&
+                !featureLinks.contains(event.target)
+            ) {
+                featureLinks.style.display = "none";
+            }
+        });
+    </script>
 
 </body>
 </html>
