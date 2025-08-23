@@ -13,11 +13,10 @@ body {
 ------------------------------ */
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
-    background-color: #fff; /* ヘッダーも白 */
-    border-bottom: none; /* 境界線なし */
+    background-color: #fff;
+    border-bottom: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -25,6 +24,7 @@ header {
     z-index: 1000;
 }
 
+/* サイト名 */
 header h1 {
     font-size: 1.4rem;
     margin: 0;
@@ -40,7 +40,9 @@ header h1 a {
 .top-nav {
     display: flex;
     gap: 10px;
+    margin-left: auto; /* 追加：右端に押し込む */
 }
+
 
 /* サイト名クリックで出る四角いリンクボックス（スクロール追従） */
 .feature-links {
