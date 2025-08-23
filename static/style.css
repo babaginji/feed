@@ -14,7 +14,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    padding: 5px 20px;
+    padding: 5px 10px; /* 左右パディングを少し減らす */
     background-color: #fff;
     border-bottom: none;
     position: fixed;
@@ -22,6 +22,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
+    box-sizing: border-box; /* 幅計算にパディングを含める */
 }
 
 /* サイト名 */
@@ -40,7 +41,8 @@ header h1 a {
 .top-nav {
     display: flex;
     gap: 10px;
-    margin-left: auto; /* 追加：右端に押し込む */
+    margin-left: auto;
+    padding-right: 10px; /* 右端に余白を追加 */
 }
 
 
