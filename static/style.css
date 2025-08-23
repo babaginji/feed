@@ -34,7 +34,7 @@ header h1 a {
 
 /* サイト名クリックで出る四角いリンクボックス */
 .feature-links {
-    display: none;
+    display: none; /* デフォルトは非表示 */
     position: absolute;
     top: 100%; /* サイト名の下 */
     left: 0;
@@ -45,7 +45,6 @@ header h1 a {
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     z-index: 100;
     min-width: 200px; /* ボックス大きめ */
-    display: flex;
     flex-direction: column;
     align-items: center; /* 中央揃え */
 }
@@ -53,8 +52,8 @@ header h1 a {
 /* 縦並びの文字型リンク */
 .feature-links a {
     display: block;
-    font-size: 0.9rem; /* 文字大きめ */
-    margin-bottom: 10px;
+    font-size: 1rem; /* 少し大きめ */
+    margin-bottom: 12px;
     text-decoration: none;
     color: #333;
     text-align: center;
@@ -110,6 +109,6 @@ footer {
     }
 
     .feature-links a {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 }
