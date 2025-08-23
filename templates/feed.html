@@ -43,14 +43,14 @@
     <script>
         const siteName = document.getElementById("site-name");
         const featureLinks = document.getElementById("feature-links");
-    
+
         // サイト名をクリックでトグル
         siteName.addEventListener("click", (event) => {
             event.preventDefault();
             featureLinks.style.display =
                 featureLinks.style.display === "flex" ? "none" : "flex";
         });
-    
+
         // ボックス外をクリックしたら閉じる
         document.addEventListener("click", (event) => {
             if (
@@ -61,6 +61,6 @@
             }
         });
     </script>
-    
+
 </body>
 </html>
