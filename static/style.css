@@ -50,6 +50,12 @@ header h1 a {
     height: 24px; /* 必要に応じて調整 */
     object-fit: contain;
 }
+/* ヘッダーの通知・DMアイコン */
+.top-nav-icon {
+    width: 24px;      /* 元のボタンサイズに合わせる */
+    height: 24px;
+    object-fit: contain;
+}
 
 
 /* サイト名クリックで出る四角いリンクボックス（スクロール追従） */
